@@ -1,0 +1,17 @@
+<div class="overlay-bg animated fadeIn">
+	<div class="overlay-inner">
+		<div class="overlay-box animated bounceInDown">
+			<form method="post" action="<%= relativePath %>page/update">
+				<input type="hidden" name="id" value="<%= id %>"/>
+				<input type="hidden" name="key" value="<%= key %>"/>
+				<% if (markdown) { %>
+				<textarea name="value"><%= value %></textarea>
+				<% } else { %>
+				<input type="text" name="value" value="<%= value %>"/>
+				<% } %>
+				<input type="submit" class="btn btn-block btn-primary" value="Save Changes"/>
+			</form>
+			<span class="btn btn-block" data-action="cancel">Cancel</span>
+		</div>
+	</div>
+</div>

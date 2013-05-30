@@ -1,0 +1,152 @@
+.smooth {
+	-webkit-transition-duration: .3s;
+	   -moz-transition-duration: .3s;
+	     -o-transition-duration: .3s;
+	    -ms-transition-duration: .3s;
+	        transition-duration: .3s;
+	-webkit-transition-timing-function: ease-out;
+	   -moz-transition-timing-function: ease-out;
+	     -o-transition-timing-function: ease-out;
+	    -ms-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
+}
+.smooth.smooth-fast {
+	-webkit-transition-duration: .1s;
+	   -moz-transition-duration: .1s;
+	     -o-transition-duration: .1s;
+	    -ms-transition-duration: .1s;
+	        transition-duration: .1s;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	padding: 16px 6px;
+}
+
+textarea {
+	width: 100%;
+}
+
+body {
+	padding: 0px;
+  padding-bottom: 40px;
+  font-family: "Ubuntu";
+}
+
+header {
+	padding-top: 40px;
+	border-bottom: 1px solid #666;
+	margin-bottom: 32px;
+	background: url('../img/header.jpg');
+	height: 363px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+	header .navbar-inner {
+		border-color: #949494;
+		border-radius: 0px;
+		border-bottom: none;
+		box-shadow: 0px 0px 0 rgb(192,192,192),0px 1px 0 rgb(162,162,162),0px 2px 0 rgb(132,132,132), 0px 3px 0 rgb(102,102,102),0px 8px 32px black;
+	}
+	header .hero-unit {
+		padding: 0px;
+		background: none;
+		text-shadow:0px 0px 0 rgb(192,192,192),0px 1px 0 rgb(162,162,162),0px 2px 0 rgb(132,132,132), 0px 3px 0 rgb(102,102,102),0px 4px 3px rgba(0,0,0,1),0px 4px 1px rgba(0,0,0,0.5),0px 8px 32px black;
+    mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,.5)));
+		opacity: .9;
+		color: white;
+	}
+		header .hero-unit p {
+			text-shadow: none;
+			font-weight: bold;
+			padding: 0px 48px;
+			margin: 12px 16px;
+			background: rgba(0, 0, 0, .5);
+			display: inline-block;
+			color: #CCC;
+			border-radius: 3px;
+			border: 1px solid #333;
+			text-shadow: 0px 1px 1px black;
+			box-shadow: 0px 0px 1px black inset;
+		}
+
+#userbar {
+	background: rgba(255, 255, 255, .9);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9),
+	            0px 0px 64px white inset;
+	position: fixed;
+	left: -218px;
+	top: 0px;
+	bottom: 0px;
+	width: 250px;
+	padding: 32px;
+}
+	#userbar.active{
+		left: 0px;
+	}
+	#userbar a:link {
+		color: black;
+		display: block;
+		text-align: left;
+		font-weight: bold;
+		padding: 16px;
+		border: 1px solid transparent;
+		text-shadow: 0px 0px 8px white;
+	}
+	#userbar a:not(:first-child) {
+		margin-top: 8px;
+	}
+	#userbar a:visited {
+		color: black;
+	}
+	#userbar a:hover {
+		color: black;
+		text-decoration: none;
+		background: rgba(255,255,255,.5);
+		border-color: #ccc;
+	}
+	#userbar a:active {
+	}
+	#userbar .posts, #userbar .pages {
+		width: 250px;
+		max-height: 500px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		padding: 8px;
+		background: rgba(255, 255, 255, .9);
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9),
+		            0px 0px 64px white inset;
+	}
+#page-body {
+	padding: 16px;
+}
+.blog-tile {
+	padding: 16px;
+}
+	.blog-tile:not(:first-child) {
+		border-top: 1px solid #ccc;
+	}
+	.blog-title h2 {
+		
+	}
+	.blog-title p {
+		
+	}
+	
+.comment {
+	margin: 16px 0px;
+}
+	.comment .comment-body {
+		border: 1px solid #ccc;
+		padding: 8px;
+		margin-top: 8px;
+		box-shadow: 0px 1px 2px rgba(0,0,0,.1);
+	}
+	.comment .comment-author {
+		color: #0080ff;
+		text-align: right;
+	}
+form.comment-form {
+	margin: 48px 0px;
+}
