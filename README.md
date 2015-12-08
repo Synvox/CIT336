@@ -1,4 +1,4 @@
-# CIT 230  && CIT336
+# CIT 230  & CIT336
 A repo for the challenge exam.
 
 ## The Story
