@@ -59,16 +59,15 @@
         <?php
         	if (PageController::canEdit()) {
 	        	?>
-					    <script type="text/javascript" src="<?= $relativePath ?>assets/js/ejs.js"></script>
-					    <script type="text/javascript">
-						    var relativePath = "<?= $relativePath ?>";
-					    </script>
-					    <script type="text/javascript" src="<?= $relativePath ?>assets/js/admin.js"></script>
+	<script type="text/javascript" src="<?= $relativePath ?>assets/js/ejs.js"></script>
+	<script type="text/javascript">
+		var relativePath = "<?= $relativePath ?>";
+	</script>
+	<script type="text/javascript" src="<?= $relativePath ?>assets/js/admin.js"></script>
 	        	<?php
         	}
         ?>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
