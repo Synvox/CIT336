@@ -12,7 +12,7 @@ if (isset($_SERVER['PATH_INFO'])) {
 
 $urlArr = explode('/', trim($path, '/'));
 
-$relativePath = "/CIT/";
+$relativePath = "/";
 $currentPage = null;
 $errors = array();
 
@@ -62,7 +62,7 @@ class App {
 
 			if (array_key_exists(1,$urlArr) && !is_numeric($urlArr[1]))
 				$action = $urlArr[1];
-				
+
 			$id = null;
 			if (array_key_exists(2,$urlArr) && !is_numeric($urlArr[2]))
 				$id = $urlArr[2];

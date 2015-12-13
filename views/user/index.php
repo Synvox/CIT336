@@ -10,8 +10,8 @@
 <div class="container">
 	<div id="page-body">
 		<?php errors(); ?>
-		
-		<form class="form-horizontal" method="post" action="">
+
+		<form class="form-horizontal" method="post" action="/user">
 		  <div class="control-group">
 		    <label class="control-label" for="inputEmail">Email</label>
 		    <div class="controls">
@@ -32,7 +32,7 @@
 		  </div>
 		</form>
   </div>
-  
+
   <?php footer(); ?>
 </div>
 

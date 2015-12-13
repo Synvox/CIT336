@@ -60,15 +60,12 @@ header {
 		header .hero-unit p {
 			text-shadow: none;
 			font-weight: bold;
-			padding: 0px 48px;
+			padding: 0px;
 			margin: 12px 16px;
-			background: rgba(0, 0, 0, .5);
 			display: inline-block;
-			color: #CCC;
+			color: #fff;
 			border-radius: 3px;
-			border: 1px solid #333;
 			text-shadow: 0px 1px 1px black;
-			box-shadow: 0px 0px 1px black inset;
 		}
 
 #userbar {
@@ -128,12 +125,12 @@ header {
 		border-top: 1px solid #ccc;
 	}
 	.blog-title h2 {
-		
+
 	}
 	.blog-title p {
-		
+
 	}
-	
+
 .comment {
 	margin: 16px 0px;
 }

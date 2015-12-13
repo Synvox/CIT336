@@ -10,7 +10,7 @@
 <div class="container">
 	<div id="page-body">
 		<?php errors(); ?>
-		<form class="form-horizontal" method="post" action="">
+		<form class="form-horizontal" method="post" action="/user">
 			<input type="hidden" name="create" value="true"/>
 		  <div class="control-group">
 		    <label class="control-label" for="inputEmail">Name</label>
@@ -37,7 +37,7 @@
 		  </div>
 		</form>
   </div>
-  
+
   <?php footer(); ?>
 </div>
 

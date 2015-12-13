@@ -17,7 +17,7 @@ class UserController extends Controller
 			if ($error) {
 				return parent::view('user/index');
 			}
-			if ($_POST['create'] == true) {
+			if (array_key_exists('create', $_POST) && $_POST['create'] == true) {
 				User::create($_POST['name'], $_POST['email'], $_POST['password']);
 			}
 			$user = User::login($_POST['email'], $_POST['password']);
@@ -30,7 +30,7 @@ class UserController extends Controller
 		} else
 			return parent::view('user/index');
 	}
-	
+
 	function create($params) {
 		global $relativePath, $errors;
 		if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -52,7 +52,7 @@ class UserController extends Controller
 		} else
 			return parent::view('user/create');
 	}
-	
+
 	function logout(){
 		global $relativePath;
 		session_destroy();
