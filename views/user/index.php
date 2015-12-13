@@ -26,8 +26,8 @@
 		  </div>
 		  <div class="control-group">
 		    <div class="controls">
-		      <button type="submit" class="btn">Sign in</button>
-		      <a href="user/create" class="btn btn-primary">Join Us!</a>
+		      <button type="submit" class="btn btn-primary">Sign in</button>
+		      <a href="user/create" class="btn">Join Us!</a>
 		    </div>
 		  </div>
 		</form>

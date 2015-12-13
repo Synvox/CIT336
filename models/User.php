@@ -9,20 +9,27 @@ class User
 	var $role;
 	var $isAdmin;
 
-	function __construct($id=-1, $name="", $email="", $password="", $role=0) {
+	function __construct($id=-1, $name="", $email="", $password="", $role=2) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->email = $email;
 		$this->password = $password;
 		$this->role = $role;
-		$this->isAdmin = $role > 0;
+
 		$currentUserCache = 0;
 	}
 
+	function isAdmin() {
+		return $this->role > 0;
+	}
+
 	static function find($id) {
+		trigger_error("SEARCHING $id");
 		$stmt = query("SELECT id, name, email, password, role FROM Users WHERE id=?", array($id));
 		$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
 		$user = $stmt->fetch();
+		trigger_error(json_encode($user));
+
 	  return $user;
 	}
 
@@ -39,8 +46,16 @@ class User
 	}
 
 	static function create($name, $email, $password) {
+		$stmt = query("SELECT id, name, email, password, role FROM Users WHERE role=2");
+		$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
+		$user = $stmt->fetch();
+
+		$role = 0;
+		if ($user->id == -1)
+			$role = 2;
+
 		$password = crypt($password);
-		$stmt = query("INSERT INTO Users (name, email, password, role) VALUES (?,?,?,2)", array($name, $email, $password));
+		$stmt = query("INSERT INTO Users (name, email, password, role) VALUES (?,?,?,?)", array($name, $email, $password, $role));
 	}
 
 	/*

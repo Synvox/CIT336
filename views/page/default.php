@@ -9,15 +9,21 @@
 
 <div class="container">
 	<article id="page-body" class="animated fadeIn" <?= PageController::keyAttr('body',true) ?>>
-  <?= nl2br($GLOBALS['page']->body) ?>  
+  <?= nl2br($GLOBALS['page']->body) ?>
   </article>
   <?php comments(); ?>
   <?php footer(); ?>
 </div>
 
 <script type="text/javascript">
+  var user = <?php
+		if (User::current()!=null)
+			print(json_encode(User::current()));
+		else
+			print("null");
+	?>;
 	var page = <?php
-		if (User::current() != null && (User::current()->id == $GLOBALS['page']->author || User::current()->role == 0))
+		if (PageController::canEdit())
 			print(json_encode($GLOBALS['page']));
 		else
 			print("null");

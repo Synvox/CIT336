@@ -44,7 +44,6 @@ class Comment
 	}
 
 	static function create($author, $page, $body){
-		trigger_error("CALLED");
 		query("INSERT INTO Comments (author, page, body) VALUES (?,?,?)",array($author, $page, $body));
 		$stmt = query("SELECT * FROM Comments ORDER BY id DESC LIMIT 1");
 		$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
