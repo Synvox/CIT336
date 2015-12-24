@@ -104,3 +104,14 @@ body.open {
 	.overlay-box input[type="text"] {
 		width: 400px;
 	}
+[data-page-key]:hover {
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+  [data-page-key]:hover {
+    background: rgba(0,0,0,.05);
+  }
+  [data-page-key]:active {
+    transition-duration: 50ms;
+    background: rgba(0,0,0,.2);
+  }

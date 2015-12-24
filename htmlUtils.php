@@ -29,9 +29,6 @@ function nav(){
 			        	<?php if (App::attr('site', 'blog')) {?>
 			        	<li<?php if ($here === "blog") {?> class="active"<?php } ?>><a href="<?= $relativePath.'blog' ?>">Blog</a></li>
 			        	<?php } ?>
-			        	<li<?php if ($here === "user") {?> class="active"<?php } ?>><a href="<?= $relativePath.'user' ?><?= (User::current() == null)?"":"/logout" ?>">
-			        		<?= (User::current() == null)?"Log In":"Log Out" ?>
-			        	</a></li>
 			        </ul>
 			      </div>
 			    </div>
@@ -47,7 +44,9 @@ function footer(){
   <hr>
 
   <footer class="container">
-    <p>&copy; <?= App::attr('site','company'); ?> 2013</p>
+     <p><a href="<?= '/user' ?><?= (User::current() == null)?"":"/logout" ?>">
+        <?= (User::current() == null)?"Log In":"Log Out" ?>
+      </a> &bull; &copy; <?= App::attr('site','company'); ?> 2013 </p> 
   </footer>
 	<?php	
 }

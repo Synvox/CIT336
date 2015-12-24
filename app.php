@@ -5,6 +5,7 @@ if (!isset($indexEntry) || !$indexEntry) {
 	header("HTTP/1.1 403 Forbidden");
 	exit;
 }
+
 $path = "/";
 if (isset($_SERVER['PATH_INFO'])) {
 	$path = $_SERVER['PATH_INFO'];
@@ -12,7 +13,13 @@ if (isset($_SERVER['PATH_INFO'])) {
 
 $urlArr = explode('/', trim($path, '/'));
 
+// Settings:
 $relativePath = "/";
+$pdoPath = "unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock";
+$sqlUsername = "root";
+$sqlPassword = "root";
+$sqlDatabase = "CIT_DB";
+
 $currentPage = null;
 $errors = array();
 
@@ -43,10 +50,10 @@ class App {
 	var $viewPath;
 
 	function __construct() {
-		global $pdo, $urlArr;
+		global $pdo, $urlArr, $pdoPath, $sqlDatabase, $sqlUsername, $sqlPassword;
 
 		session_start();
-		$pdo = new PDO("mysql:host=localhost;dbname=CIT_DB", 'root', 'root');
+		$pdo = new PDO("mysql:$pdoPath;dbname=$sqlDatabase", $sqlUsername, 'root');
 
 		$controllerName = $urlArr[0];
 

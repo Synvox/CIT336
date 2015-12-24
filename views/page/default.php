@@ -9,7 +9,7 @@
 
 <div class="container">
 	<article id="page-body" class="animated fadeIn" <?= PageController::keyAttr('body',true) ?>>
-  <?= nl2br($GLOBALS['page']->body) ?>
+  <?= nl2br($GLOBALS['page']->html) ?>
   </article>
   <?php comments(); ?>
   <?php footer(); ?>

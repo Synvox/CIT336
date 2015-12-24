@@ -12,6 +12,8 @@ class PageController extends Controller
 			$page = Page::find($action);
 		}
 
+    $page->html = Markdown::defaultTransform($page->body);
+    
 		if ($page !== null) {
 			$GLOBALS['page'] = $page;
 			return parent::view('page/default');

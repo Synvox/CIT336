@@ -24,11 +24,9 @@ class User
 	}
 
 	static function find($id) {
-		trigger_error("SEARCHING $id");
 		$stmt = query("SELECT id, name, email, password, role FROM Users WHERE id=?", array($id));
 		$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
 		$user = $stmt->fetch();
-		trigger_error(json_encode($user));
 
 	  return $user;
 	}
